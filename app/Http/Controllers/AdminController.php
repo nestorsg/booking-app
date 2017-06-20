@@ -30,7 +30,7 @@ class AdminController extends Controller {
     if (Auth::attempt(array('username' => $input['username'], 'password' => $input['password'] ))) {
       return redirect('admin/appointments');
     } else {
-      $errors = "Invalid username or password";
+      $errors = "Usuario o contraseña erroneos";
       return view('admin/login')->with('errors', $errors);
     }
   }
@@ -72,7 +72,7 @@ class AdminController extends Controller {
 
   public function updatePackage($package_id)
   {
-    dd('tets');
+     package::find($package_id)->update();
   }
 
   public function anySetTime()

@@ -6,4 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Package extends Model{
   	protected $table = 'packages';
+    protected $fillable = [
+        'Edificio', 'NombreEspacio' ,'TipoEspacio', 'Capacidad', 'Precio', 'Ordenador', 'Televisor',
+        'videoconferencia', 'Proyector', 'SonidoAmbiental', 'Microfono', 'PizarraElectronica', 'AireAcondicionado',
+        'Portatil', 'SalidaPortatil',
+    ];
 }

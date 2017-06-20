@@ -1,24 +1,32 @@
 @extends('layout')
 @section('content')
-
-  
-  <div class="row text-center">
-  <h1>Select Package</h1>
-  @foreach($packages as $package)
-   
-    <div class="col-md-4 center-block" style="float:none;">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-    <p><b>Package: </b><a href="booking/calendar/{{ $package->id }}">{{ $package->package_name }}</a><br>
-      </div>
-      <div class="panel-body">
-    <b>Time: </b>{{ $package->package_time }} hours<br>
-    <b>Price: </b>{{ $package->package_price }}<br>
-    <b>Description: </b>{{ $package->package_description }}</p>
+  <div class="container">
+    <div class="row">
+      <legend>Espacios</legend>
+      <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+          <th>Edificio</th>
+          <th>Nombre de Espacio</th>
+          <th>Tipo de Espacio</th>
+          <th>Capacidad</th>
+          <th>Precio</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($packages as $p)
+          <tr>
+            <td>{{ $p->Edificio }}</td>
+            <td>{{ $p->NombreEspacio }}</td>
+            <td>{{ $p->TipoEspacio }}</td>
+            <td>{{ $p->Capacidad }}</td>
+            <td>{{ $p->Precio.' Euros' }}</td>
+            <td><a href="booking/calendar/{{ $p->NombreEspacio }}" class="btn btn-primary">Buscar fecha</a></td>
+          </tr>
+        @endforeach
+        </tbody>
+      </table>
     </div>
-</div>
-</div>
-  @endforeach
-</div>
- 
+  </div>
 @stop

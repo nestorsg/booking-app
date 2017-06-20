@@ -25,6 +25,8 @@ class BookingController extends Controller
   * User selects package to continue
   *
   **/
+
+
   public function getIndex() 
   {
    $packages = Package::all();
@@ -40,12 +42,12 @@ class BookingController extends Controller
   {
 
     //Add package to the session data
-    Session::put('packageID', $pid);
-    $package = Package::find($pid);
+    Session::put('NombreEspacio', $NombreEspacio);
+    $package = Package::find($NombreEspacio);
     
     // This groups all booking times by date so we can give a list of all days available.
     $data = [
-    'packageName' => $package->package_name,
+    'NombreEspacio' => $package->NombreEspacio,
     'days' => BookingDateTime::all()
     ];
     

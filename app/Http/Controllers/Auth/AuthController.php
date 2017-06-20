@@ -28,10 +28,18 @@ class AuthController extends Controller
      *
      * @return void
      */
+    protected $redirectTo = '/';
+
+    /**
+     * Create a new authentication controller instance.
+     *
+     * @return void
+     */
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'getLogout']);
+        $this->middleware('guest', ['except' => 'logout']);
     }
+
 
     /**
      * Get a validator for an incoming registration request.
@@ -43,6 +51,7 @@ class AuthController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|max:255',
+            'dni' => 'required1|max:8',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
         ]);
@@ -58,6 +67,7 @@ class AuthController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'dni' => $data['dni'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);

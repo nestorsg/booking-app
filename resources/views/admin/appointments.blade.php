@@ -5,9 +5,9 @@
 	<div id="calendar"></div>
 </div>
 <div class="col-lg-4">
-	<legend> Details </legend>
+	<legend> Detalles </legend>
 	<div id="appointment-details">
-		<p>Click on an appointment to show details.</p>
+		<p>Click en una reserva para ver los detalles.</p>
 	</div>
 </div>
 

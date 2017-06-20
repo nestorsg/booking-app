@@ -26,14 +26,14 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Booking</a>
+        <a class="navbar-brand" href="#">Gestión de reservas</a>
       </div>
 
       <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
         <ul class="nav navbar-nav">
           <li><a href="{{ url('admin/appointments') }}">Appointments<span class="sr-only">(current)</span></a></li>
           <li><a href="{{ url('admin/availability') }}">Availability</a></li>
-          <li><a href="{{ url('admin/packages') }}">Packages</a></li>
+          <li><a href="{{ url('admin/packages') }}">Espacios disponibles</a></li>
           <li><a href="{{ url('admin/configuration') }}">Configuration</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">

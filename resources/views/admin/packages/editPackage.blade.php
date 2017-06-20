@@ -7,22 +7,18 @@
 		  {!! Form::model($package, array('route' => array('package.update', $package->id))) !!}
 
         <!-- name -->
-        {!! Form::label('package_name', 'Name') !!}
-        {!! Form::text('package_name') !!}
-
-        <!-- price -->
-        {!! Form::label('package_price', 'Price') !!}
-        {!! Form::number('package_price') !!}
-
-        {!! Form::label('package_time', 'Time') !!}
-        {!! Form::number('package_time') !!}
-
-				<br>
-        {!! Form::label('package_description', 'Description') !!}
+        {!! Form::label('NombreEspacio', 'Nombre del espacio') !!}
+        {!! Form::text('NombreEspacio') !!}
         <br>
-        {!! Form::textarea('package_description') !!}
-				<br>
-        {!! Form::button('Update Package', ['class' => 'btn btn-primary']) !!}
+        {!! Form::label('TipoEspacio', 'Tipo de Espacio') !!}
+        {!! Form::text('TipoEspacio') !!}
+        <br>
+        <!-- price -->
+        {!! Form::label('Precio', 'Precio') !!}
+        {!! Form::number('Precio') !!}
+
+		<br>
+        {!! Form::button('Actualizar datos', ['class' => 'btn btn-primary']) !!}
 
     {!! Form::close() !!}
 	</div>

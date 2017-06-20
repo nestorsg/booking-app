@@ -1,6 +1,8 @@
 <?php
 
-class HomeController extends BaseController {
+namespace App\Http\Controllers;
+
+class HomeController extends Controller {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -15,14 +17,24 @@ class HomeController extends BaseController {
 	|
 	*/
 
-	public function showWelcome()
+	public function index()
 	{
-		return View::make('hello');
+        return view('home');
 	}
-  
-  public function showTimes()
-  {
-    
-  }
+
+	public function login(){
+	    return view('auth/login');
+    }
+
+    public function loginval()
+    {
+        $input = Input::all();
+        if (Auth::attempt(array('dni' => $input['dni'], 'password' => $input['password'] ))) {
+            return redirect('/Espacios');
+        } else {
+            $errors = "Usuario o contraseña erroneos";
+            return view('auth/login')->with('errors', $errors);
+        }
+    }
 
 }
